@@ -20,7 +20,7 @@ def traducir_bloque(texto, origen, destino):
             traductor = GoogleTranslator(source=origen, target=destino)
             return traductor.translate(texto)
         except Exception:
-            time.sleep(1.5) # Pausa táctica si hay saturación
+            time.sleep(1.5)
     return texto 
 
 def procesar_documento(archivo_subido, origen, destino, barra, estado):
@@ -124,4 +124,5 @@ with col_btn:
                     file_name=f"TRADUCIDO_{archivo.name.replace('.pdf', '')}.docx",
                     mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                     use_container_width=True
+
                 )
